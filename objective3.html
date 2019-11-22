@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+<body style="background-color:black;">
+<font color="white"><b>
+<font size=8>
+Objective: &ensp;
+<font size=6>
+By the end of the lesson, you will be able to ... (1) Understand the need for big data (2) Evaluate big data (3) Learn big data's limitations
+<br><br>
+<font size=8>
+Need Help:&ensp;
+<font size=6> 
+1. Ask elbow partners &ensp; 
+2. Check Google &ensp; 
+3. Go to Teacher
+<font size=6>
+<!-- Display the countdown timer in an element -->
+<font color="yellow"><font size=6><b>
+<p id="demo"></p>
+</b></font>
+<script>
 
+// Set the date we're counting down to
+
+var countDownDate = new Date("Nov 22, 2019 10:13:00").getTime(); //10:03,10:13
+var countDownDate2 = new Date("Nov 22, 2019 11:04:00").getTime(); //10:51,11:04
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var distance_2 = countDownDate2 - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  var hours_2 = Math.floor((distance_2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes_2 = Math.floor((distance_2 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds_2 = Math.floor((distance_2 % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp;"+minutes+"m "+seconds+("s ")+
+    "&emsp; Class Time: &ensp;"+hours_2+"h "+minutes_2+"m "+seconds_2+("s ");
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    // clearInterval(x);
+    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED"+
+    "&emsp; Class Time: &ensp;"+hours_2+"h "+minutes_2+"m "+seconds_2+("s ");
+  }
+  if (distance_2 < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED"+
+    "&emsp; Class Time: &ensp; EXPIRED";
+  }
+}, 1000);
+</script>
+<font size=8><font color="white">
+Tasks (Big Data, Data Trends, & Assumptions)
+<font size=6>
+<ol>
+  <li>
+Bell Ringer (In Seats, Voice: 0)
+  </li>
+  <li>
+Open the Code.org Instructional Guide (In Seats, Voice: 0)
+  </li>
+  <li>
+Complete the Assignment as a Group (In Seats, Voice: 2)
+  </li>
+  <li>
+Share Out as a Class and Submit Work in Teams (In Seats, Voice: 2)
+  </li>
+  <li>
+Wrap Up (Logout & Sit for Dismissal, Voice: 0)
+  </li>
+</ol>
+<b></font>
+</body>
+</html>
