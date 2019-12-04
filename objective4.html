@@ -22,9 +22,12 @@ Need Help:&ensp;
 <script>
 
 // Set the date we're counting down to
-
-var countDownDate = new Date("Dec 04, 2019 11:15:00").getTime(); //11:02,11:15
-var countDownDate2 = new Date("Dec 04, 2019 12:06:00").getTime(); //11:50,12:06
+var today=new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var countDownDate = new Date(date+" 10:13:00").getTime(); //11:02,11:15
+var countDownDate2 = new Date(date+" 10:51:00").getTime(); //11:50,12:06
+// var countDownDate = new Date("Dec 04, 2019 11:15:00").getTime(); //11:02,11:15
+// var countDownDate2 = new Date("Dec 04, 2019 12:06:00").getTime(); //11:50,12:06
 
 // Update the count down every 1 second
 var x = setInterval(function() {
