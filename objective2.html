@@ -23,8 +23,18 @@ Need Help:&ensp;
 // Set the date we're counting down to
 var today=new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var countDownDate = new Date(date+" 09:07:00").getTime(); //09:05,09:07
-var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
+var day = today.getDay();
+if (day==1) {
+  var countDownDate = new Date(date+" 09:05:00").getTime(); //09:05,09:07
+  var countDownDate2 = new Date(date+" 09:52:00").getTime(); //09:52,10:02
+} else {
+  var countDownDate = new Date(date+" 09:07:00").getTime(); //09:05,09:07
+  var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
+}
+
+// var countDownDate = new Date(date+" 09:05:00").getTime(); //09:05,09:07
+// var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
+
 // Update the count down every 1 second
 var x = setInterval(function() {
   var now = new Date().getTime();
