@@ -22,7 +22,7 @@ Need Help:&ensp;
 <script>
 // Set the date we're counting down to
 var today=new Date();
-var date=today.getMonth()+" "+today.getDate()+" "+today.getFullYear();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var countDownDate = new Date(date+" 12:07:00").getTime(); //09:05,09:07
 var countDownDate2 = new Date(date+" 12:02:00").getTime(); //09:52,10:02
 // Update the count down every 1 second
