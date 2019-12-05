@@ -23,7 +23,11 @@ Need Help:&ensp;
 // Set the date we're counting down to
 var today=new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var day = today.getDay();
+  
+// day override
+// var day = today.getDay();
+var day="class";
+  
 var countDownDate = new Date(date+" 09:07:00").getTime(); //09:05,09:07
 var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
 if (day==1) {
@@ -31,9 +35,9 @@ if (day==1) {
   var countDownDate2 = new Date(date+" 09:52:00").getTime(); //09:52,10:02
 }
 // Special Schedule like finals schedule, etc.
-if (day==7) {
-  var countDownDate = new Date(date+" 11:02:00").getTime(); //09:05,09:07
-  var countDownDate2 = new Date(date+" 11:50:00").getTime(); //09:52,10:02
+if (day=="class") {
+  var countDownDate = new Date(date+" 09:03:00").getTime();
+  var countDownDate2 = new Date(date+" 09:54:00").getTime();
 }
   
 // var countDownDate = new Date(date+" 09:05:00").getTime(); //09:05,09:07
