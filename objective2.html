@@ -24,14 +24,18 @@ Need Help:&ensp;
 var today=new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var day = today.getDay();
+var countDownDate = new Date(date+" 09:07:00").getTime(); //09:05,09:07
+var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
 if (day==1) {
   var countDownDate = new Date(date+" 09:05:00").getTime(); //09:05,09:07
   var countDownDate2 = new Date(date+" 09:52:00").getTime(); //09:52,10:02
-} else {
-  var countDownDate = new Date(date+" 09:07:00").getTime(); //09:05,09:07
-  var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
 }
-
+// Special Schedule like finals schedule, etc.
+if (day==7) {
+  var countDownDate = new Date(date+" 11:02:00").getTime(); //09:05,09:07
+  var countDownDate2 = new Date(date+" 11:50:00").getTime(); //09:52,10:02
+}
+  
 // var countDownDate = new Date(date+" 09:05:00").getTime(); //09:05,09:07
 // var countDownDate2 = new Date(date+" 10:02:00").getTime(); //09:52,10:02
 
