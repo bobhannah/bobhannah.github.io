@@ -24,9 +24,19 @@ Need Help:&ensp;
 // Set the date we're counting down to
 var today=new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var day = today.getDay();
 var countDownDate = new Date(date+" 10:13:00").getTime(); //10:03,10:13
 var countDownDate2 = new Date(date+" 11:04:00").getTime(); //10:51,11:04
-
+if (day==1) {
+  var countDownDate = new Date(date+" 10:03:00").getTime(); //10:03,10:13
+  var countDownDate2 = new Date(date+" 10:51:00").getTime(); //10:51,11:04
+}
+// Special Schedule like finals schedule, etc.
+if (day==7) {
+  var countDownDate = new Date(date+" 11:02:00").getTime(); //10:03,10:13
+  var countDownDate2 = new Date(date+" 11:50:00").getTime(); //10:51,11:04
+}
+  
 // Update the count down every 1 second
 var x = setInterval(function() {
   var now = new Date().getTime();
