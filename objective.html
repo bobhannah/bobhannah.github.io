@@ -39,7 +39,7 @@ if (day==1) {
 }
 // Special Schedule like finals schedule, etc.
 if (day=="class") {
-  var countDownDate = new Date(date+" 11:27:00").getTime();
+  var countDownDate = new Date(date+" 19:27:00").getTime();
   var countDownDate2 = new Date(date+" 12:14:00").getTime();
 }
 
@@ -57,7 +57,7 @@ var x = setInterval(function() {
   var seconds_2 = Math.floor((distance_2 % (1000 * 60)) / 1000);
   // Display the result in the element with id="demo"
   //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp;"+hours+"h "+minutes+"m "+seconds+("s ");
+    document.getElementById("demo").innerHTML="&emsp; Time Left: &ensp;"+hours+"h "+minutes+"m "+seconds+("s ");
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
