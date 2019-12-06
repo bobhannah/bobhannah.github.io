@@ -33,15 +33,15 @@ var day = today.getDay();
 // var day = "class";
   
 var bellTime = new Date(date+" 19:15:00").getTime(); //11:02,11:15
-var countDownDate2 = new Date(date+" 12:06:00").getTime(); //11:50,12:06
+var warmUpTime = new Date(date+" 12:06:00").getTime(); //11:50,12:06
 if (day==1) {
-  var countDownDate = new Date(date+" 11:02:00").getTime(); //11:02,11:15
-  var countDownDate2 = new Date(date+" 11:50:00").getTime(); //11:50,12:06
+  var bellTime = new Date(date+" 11:02:00").getTime(); //11:02,11:15
+  var warmUpTime = new Date(date+" 11:50:00").getTime(); //11:50,12:06
 }
 // Special Schedule like finals schedule, etc.
 if (day=="class") {
-  var countDownDate = new Date(date+" 11:27:00").getTime();
-  var countDownDate2 = new Date(date+" 12:14:00").getTime();
+  var bellTime = new Date(date+" 11:27:00").getTime();
+  var warmUpTime = new Date(date+" 12:14:00").getTime();
 }
 
 // Bell Ringer Timing
@@ -60,7 +60,7 @@ if (day=="class") {
   
 // Warm Up Timing
   var warmUpTiming = setInterval(function() {
-  var warmUpLeft = bellTime - now;
+  var warmUpLeft = warmUpTime - now;
   var days = Math.floor(warmUpLeft / (1000 * 60 * 60 * 24));
   var hours = Math.floor((warmUpLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((warmUpLeft % (1000 * 60 * 60)) / (1000 * 60));
