@@ -45,7 +45,7 @@ if (day=="class") {
 }
 
 // Bell Ringer Timing
-  var bellTiming = setInterval(function() {
+var bellTiming = setInterval(function() {
   var bellLeft = bellTime - now;
   var days = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
   var hours = Math.floor((bellLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -59,7 +59,7 @@ if (day=="class") {
 }, 1000);
   
 // Warm Up Timing
-  var warmUpTiming = setInterval(function() {
+var warmUpTiming = setInterval(function() {
   var warmUpLeft = warmUpTime - now;
   var days = Math.floor(warmUpLeft / (1000 * 60 * 60 * 24));
   var hours = Math.floor((warmUpLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
