@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body>
+<body style="background-color:black;">
+<font color="white"><b>
+<font size=8>
+<p id="demo2"></p>
+Objective: &ensp;
+<font size=6>
+By the end of the lesson, you will be able to create an app of your own design in preparation for the final exam.
+<br><br>
+<font size=8>
+Need Help:&ensp;
+<font size=6> 
+1. Ask elbow partners &ensp; 
+2. Check Google &ensp; 
+3. Go to Teacher
+<font size=6>
+<!-- Display the countdown timer in an element -->
+<font color="yellow"><font size=6><b>
+<p id="demo"></p>
+</b></font>
+<script>
+// Set the date we're counting down to
+var today=new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var date2 = (today.getMonth()+1)+"-"+today.getDate()+"-"+today.getFullYear();
+  
+document.getElementById("demo2").innerHTML="Today is: &ensp;"+date2+"&emsp;";
+  
+// day override
+var day = today.getDay();
+// var day = "class";
+  
+var countDownDate = new Date(date+" 11:15:00").getTime(); //11:02,11:15
+var countDownDate2 = new Date(date+" 12:06:00").getTime(); //11:50,12:06
+if (day==1) {
+  var countDownDate = new Date(date+" 11:02:00").getTime(); //11:02,11:15
+  var countDownDate2 = new Date(date+" 11:50:00").getTime(); //11:50,12:06
+}
+// Special Schedule like finals schedule, etc.
+if (day=="class") {
+  var countDownDate = new Date(date+" 11:27:00").getTime();
+  var countDownDate2 = new Date(date+" 12:14:00").getTime();
+}
+  
+// var countDownDate = new Date(date+" 11:15:00").getTime(); //11:02,11:15
+// var countDownDate2 = new Date(date+" 12:06:00").getTime(); //11:50,12:06
+// var countDownDate = new Date("Dec 04, 2019 11:15:00").getTime(); //11:02,11:15
+// var countDownDate2 = new Date("Dec 04, 2019 12:06:00").getTime(); //11:50,12:06
+// Update the count down every 1 second
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var distance_2 = countDownDate2 - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var minutes_2 = Math.floor((distance_2 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds_2 = Math.floor((distance_2 % (1000 * 60)) / 1000);
+  // Display the result in the element with id="demo"
+  //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp;"+minutes+"m "+seconds+("s ")+
+    "&emsp; Class Time: &ensp;"+minutes_2+"m "+seconds_2+("s ");
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    // clearInterval(x);
+    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED"+
+    "&emsp; Class Time: &ensp;"+minutes_2+"m "+seconds_2+("s ");
+  }
+  if (distance_2 < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED"+
+    "&emsp; Class Time: &ensp; EXPIRED";
+  }
+}, 1000);
+</script>
+<font size=8><font color="white">
+Tasks (Act. 1-3-1)
+<font size=6>
+<ol>
+  <li>
+Bell Ringer (In Seats, Voice: 0)
+  </li>
+  <li>
+Open the PLTW Instructional Guide (In Seats, Voice: 0)
+  </li>
+  <li>
+Complete the Assignment using the Guide (In Seats, Voice: 2)
+  </li>
+  <li>
+Submit Work in Teams By Friday (In Seats, Voice: 0)
+  </li>
+  <li>
+Wrap Up (Logout & Sit for Dismissal, Voice: 0)
+  </li>
+</ol>
+<b></font>
+</body>
+</html>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
