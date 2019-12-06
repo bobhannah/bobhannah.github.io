@@ -47,10 +47,10 @@ if (day=="class") {
 // Bell Ringer Timing
 var bellTiming = setInterval(function() {
   var bellLeft = bellTime - now;
-  var days = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((bellLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((bellLeft % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((bellLeft % (1000 * 60)) / 1000);
+  var belldays = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
+  var bellhours = Math.floor((bellLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var bellminutes = Math.floor((bellLeft % (1000 * 60 * 60)) / (1000 * 60));
+  var bellseconds = Math.floor((bellLeft % (1000 * 60)) / 1000);
   document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+hours+"h "+minutes+"m "+seconds+("s ");
   if (bellLeft < 0) {
     clearInterval(bellTiming);
@@ -61,10 +61,10 @@ var bellTiming = setInterval(function() {
 // Warm Up Timing
 var warmUpTiming = setInterval(function() {
   var warmUpLeft = warmUpTime - now;
-  var days = Math.floor(warmUpLeft / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((warmUpLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((warmUpLeft % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((warmUpLeft % (1000 * 60)) / 1000);
+  var warmUpdays = Math.floor(warmUpLeft / (1000 * 60 * 60 * 24));
+  var warmUphours = Math.floor((warmUpLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var warmUpminutes = Math.floor((warmUpLeft % (1000 * 60 * 60)) / (1000 * 60));
+  var warmUpseconds = Math.floor((warmUpLeft % (1000 * 60)) / 1000);
   document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp;"+hours+"h "+minutes+"m "+seconds+("s ");
   if (warmUpLeft < 0) {
     clearInterval(warmUpTiming);
