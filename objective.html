@@ -46,22 +46,25 @@ if (day=="class") {
 // Update the count down every 1 second
 var x = setInterval(function() {
   var now = new Date().getTime();
-  var distance = countDownDate - now;
+  // Bell Ringer
+  var bell = countDownDate - now;
+  var days = Math.floor(bell / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((bell % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((bell % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((bell % (1000 * 60)) / 1000);
+  
+  //
   var distance_2 = countDownDate2 - now;
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   var hours_2 = Math.floor((distance_2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes_2 = Math.floor((distance_2 % (1000 * 60 * 60)) / (1000 * 60));
   var seconds_2 = Math.floor((distance_2 % (1000 * 60)) / 1000);
   // Display the result in the element with id="demo"
   //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    document.getElementById("demo").innerHTML="&emsp; Time Left: &ensp;"+hours+"h "+minutes+"m "+seconds+("s ");
+    document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+hours+"h "+minutes+"m "+seconds+("s ");
   // If the count down is finished, write some text
-  if (distance < 0) {
+  if (bell < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED";
+    document.getElementById("bell").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED";
   }
 }, 1000);
 </script>
@@ -70,7 +73,7 @@ Tasks (Act. 1-3-1)
 <font size=6>
 <ol>
   <li>
-Bell Ringer (In Seats, Voice: 0) <span id="demo" style="color:yellow"></span>
+Bell Ringer (In Seats, Voice: 0) <span id="bell" style="color:yellow"></span>
   </li>
   <li>
 Open the PLTW Instructional Guide (In Seats, Voice: 0)
