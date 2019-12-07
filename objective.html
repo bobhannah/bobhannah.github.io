@@ -1,24 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@bobhannah 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-1
-00bobhannah/bobhannah.github.io
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
-bobhannah.github.io/objective.html
-@bobhannah bobhannah Update objective.html
-bf03704 now
-101 lines (94 sloc)  3.26 KB
-  
 <!DOCTYPE html>
 <html>
 <body>
@@ -66,7 +45,7 @@ if (day=="class") {
   var warmUpTime = new Date(date+" 12:14:00").getTime();
 }
 // Bell Ringer Timing
-var bellTiming = setInterval(function() {
+var Timer = setInterval(function() {
   var now = new Date().getTime();
   var bellLeft = bellTime - now;
   var bellDays = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
@@ -83,25 +62,16 @@ var bellTiming = setInterval(function() {
   document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
   document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp;"+warmUpHours+"h "+warmUpMinutes+"m "+warmUpSeconds+("s ");
   
-  if (warmUpLeft < 0) {
-    clearInterval(bellTiming);
+  if (bellLeft < 0) {
+    // clearInterval(bellTiming);
     document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
   }
-}, 1000);
-// Warm Up Timing
-var warmUpTiming = setInterval(function() {
-  var now = new Date().getTime();
-  var warmUpLeft = warmUpTime - now;
-  var warmUpDays = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
-  var warmUpHours = Math.floor((bellLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var warmUpMinutes = Math.floor((bellLeft % (1000 * 60 * 60)) / (1000 * 60));
-  var warmUpSeconds = Math.floor((bellLeft % (1000 * 60)) / 1000);
-  document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp;"+warmUpHours+"h "+warmUpMinutes+"m "+warmUpSeconds+("s ");
-  if (warmUpLeft < 0) {
-    clearInterval(warmUpTiming);
+  if (warmUpLeft < 0 ) {
+  	clearInterval(Timer);
     document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
   }
 }, 1000);
+
 </script>
   
 <font size=8><font color="white">
@@ -127,4 +97,3 @@ Wrap Up (Logout & Sit for Dismissal, Voice: 0) <span id="warmUp" style="color:ye
 <b></font>
 </body>
 </html>
-
