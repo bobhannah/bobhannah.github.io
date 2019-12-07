@@ -55,9 +55,10 @@ var x = setInterval(function() {
   document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
   if (bellLeft < 0) {
     clearInterval(bellTiming);
-    document.getElementById("bell").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED";
+    document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
   }
 // Warm Up Timing
+  var now = new Date().getTime();
   var warmUpLeft = warmUpTime - now;
   var warmUpdays = Math.floor(warmUpLeft / (1000 * 60 * 60 * 24));
   var warmUphours = Math.floor((warmUpLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -66,7 +67,7 @@ var x = setInterval(function() {
   document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp;"+warmUpHours+"h "+warmUpMinutes+"m "+warmUpSeconds+("s ");
   if (warmUpLeft < 0) {
 //     clearInterval(x);
-    document.getElementById("warmUp").innerHTML="&emsp; Bell Ringer Time: &ensp; EXPIRED";
+    document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
   }
 }, 1000);
   
