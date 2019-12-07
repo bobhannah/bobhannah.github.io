@@ -46,6 +46,7 @@ if (day=="class") {
 
 var x = setInterval(function() {
 // Bell Ringer Timing
+  var now = new Date().getTime();
   var bellLeft = bellTime - now;
   var bellDays = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
   var bellHours = Math.floor((bellLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
