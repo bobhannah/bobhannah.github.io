@@ -4,11 +4,12 @@
 <body style="background-color:black;">
 <font color="white"><b>
 <font size=8>
-<p id="demo2"></p>
+<p id="calendar" style="color:yellow"></p>
+<p style=line-height:75%>
 Objective: &ensp;
 <font size=6>
 By the end of the lesson, you will be able to create an app of your own design in preparation for the final exam.
-<br><br>
+</p>
 <font size=8>
 Need Help:&ensp;
 <font size=6> 
@@ -23,57 +24,61 @@ Need Help:&ensp;
 <script>
 // Set the date we're counting down to
 var today=new Date();
+var day = today.getDay();
+var monthNames=["January","February","March","April","May","June",
+	"July","August","September","October","November","December"];
+var dayNames=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var date2 = (today.getMonth()+1)+"-"+today.getDate()+"-"+today.getFullYear();
+var date2 = dayNames[day]+", "+monthNames[today.getMonth()]+" "+today.getDate()+", "+today.getFullYear();
 var now = new Date().getTime();
   
-document.getElementById("demo2").innerHTML="Today is: &ensp;"+date2+"&emsp;";
+document.getElementById("calendar").innerHTML=date2+"&emsp;";
   
 // day override
 var day = today.getDay();
 // var day = "class";
   
-var bellTime = new Date(date+" 6:15:00").getTime(); //11:02,11:15
-var warmUpTime = new Date(date+" 12:06:00").getTime(); //11:50,12:06
+var bellTime = new Date(date+" 11:15:00").getTime(); //11:02,11:15
+var wrapTime = new Date(date+" 12:06:00").getTime(); //11:50,12:06
 if (day==1) {
   var bellTime = new Date(date+" 11:02:00").getTime(); //11:02,11:15
-  var warmUpTime = new Date(date+" 11:50:00").getTime(); //11:50,12:06
+  var wrapTime = new Date(date+" 11:50:00").getTime(); //11:50,12:06
 }
 // Special Schedule like finals schedule, etc.
 if (day=="class") {
   var bellTime = new Date(date+" 11:27:00").getTime();
-  var warmUpTime = new Date(date+" 12:14:00").getTime();
+  var wrapTime = new Date(date+" 12:14:00").getTime();
 }
-// Bell Ringer Timing
 var Timer = setInterval(function() {
   var now = new Date().getTime();
+// Bell Ringer Timing
   var bellLeft = bellTime - now;
   var bellDays = Math.floor(bellLeft / (1000 * 60 * 60 * 24));
   var bellHours = Math.floor((bellLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var bellMinutes = Math.floor((bellLeft % (1000 * 60 * 60)) / (1000 * 60));
   var bellSeconds = Math.floor((bellLeft % (1000 * 60)) / 1000);
-  
-  var warmUpLeft = warmUpTime - now;
-  var warmUpDays = Math.floor(warmUpLeft / (1000 * 60 * 60 * 24));
-  var warmUpHours = Math.floor((warmUpLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var warmUpMinutes = Math.floor((warmUpLeft % (1000 * 60 * 60)) / (1000 * 60));
-  var warmUpSeconds = Math.floor((warmUpLeft % (1000 * 60)) / 1000);
+//Wrap Up Timing
+  var wrapLeft = wrapTime - now;
+  var wrapDays = Math.floor(wrapLeft / (1000 * 60 * 60 * 24));
+  var wrapHours = Math.floor((wrapLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var wrapMinutes = Math.floor((wrapLeft % (1000 * 60 * 60)) / (1000 * 60));
+  var wrapSeconds = Math.floor((wrapLeft % (1000 * 60)) / 1000);
   
   document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
-  document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp;"+warmUpHours+"h "+warmUpMinutes+"m "+warmUpSeconds+("s ");
+  document.getElementById("wrap").innerHTML="&emsp; Time Left: &ensp;"+wrapHours+"h "+wrapMinutes+"m "+wrapSeconds+("s ");
   
   if (bellLeft < 0) {
     // clearInterval(bellTiming);
     document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
   }
-  if (warmUpLeft < 0 ) {
+  if (wrapLeft < 0 ) {
   	clearInterval(Timer);
-    document.getElementById("warmUp").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
+    document.getElementById("wrap").innerHTML="&emsp; Time Left: &ensp; EXPIRED";
   }
 }, 1000);
-
 </script>
-  
+
+<br><br>
 <font size=8><font color="white">
 Tasks (Act. 1-3-1)
 <font size=6>
@@ -91,7 +96,7 @@ Complete the Assignment using the Guide (In Seats, Voice: 2)
 Submit Work in Teams By Friday (In Seats, Voice: 0)
   </li>
   <li>
-Wrap Up (Logout & Sit for Dismissal, Voice: 0) <span id="warmUp" style="color:yellow"></span>
+Wrap Up (Logout & Sit for Dismissal, Voice: 0) <span id="wrap" style="color:yellow"></span>
   </li>
 </ol>
 <b></font>
