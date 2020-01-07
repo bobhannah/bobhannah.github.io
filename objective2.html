@@ -38,7 +38,7 @@ document.getElementById("calendar").innerHTML=date2+"&emsp;";
 var day = today.getDay();
 // var day = "class";
   
-var bellTime = new Date(date+" 09:07:00").getTime();
+var bellTime = new Date(date+" 09:03:00").getTime();
 var wrapTime = new Date(date+" 10:02:00").getTime();
 if (day==1) {
   var bellTime = new Date(date+" 09:03:00").getTime();
@@ -64,7 +64,8 @@ var Timer = setInterval(function() {
   var wrapMinutes = Math.floor((wrapLeft % (1000 * 60 * 60)) / (1000 * 60));
   var wrapSeconds = Math.floor((wrapLeft % (1000 * 60)) / 1000);
   
-  document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
+//   document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
+  document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellTime;
   document.getElementById("wrap").innerHTML="&emsp; Time Left: &ensp;"+wrapHours+"h "+wrapMinutes+"m "+wrapSeconds+("s ");
   
   if (bellLeft < 0) {
