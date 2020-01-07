@@ -64,8 +64,7 @@ var Timer = setInterval(function() {
   var wrapMinutes = Math.floor((wrapLeft % (1000 * 60 * 60)) / (1000 * 60));
   var wrapSeconds = Math.floor((wrapLeft % (1000 * 60)) / 1000);
   
-//   document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
-  document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellTime;
+  document.getElementById("bell").innerHTML="&emsp; Time Left: &ensp;"+bellHours+"h "+bellMinutes+"m "+bellSeconds+("s ");
   document.getElementById("wrap").innerHTML="&emsp; Time Left: &ensp;"+wrapHours+"h "+wrapMinutes+"m "+wrapSeconds+("s ");
   
   if (bellLeft < 0) {
