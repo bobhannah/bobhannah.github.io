@@ -41,7 +41,7 @@ var day = today.getDay();
 var bellTime = new Date(date+" 09:03:00").getTime();
 var wrapTime = new Date(date+" 10:02:00").getTime();
 if (day==1) {
-  var bellTime = new Date(date+" 09:03:00").getTime();
+  var bellTime = new Date(date+" 09:03:00").getTime()+(5*60*1000);
   var wrapTime = new Date(date+" 09:52:00").getTime();
 }
 // Special Schedule like finals schedule, etc.
